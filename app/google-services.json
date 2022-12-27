@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "405970489151",
+    "firebase_url": "https://duke-36a99.firebaseio.com",
+    "project_id": "duke-36a99",
+    "storage_bucket": "duke-36a99.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405970489151:android:fa81aab2305b911d",
+        "android_client_info": {
+          "package_name": "com.dukeai.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "405970489151-6cuonc52fsc2h9p2rdpmo195i8ucvvuc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAltScjaXVhmz5xEodtl8fbFnUDNOMgnR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "405970489151-6cuonc52fsc2h9p2rdpmo195i8ucvvuc.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "405970489151-kld2a1dpbss0g8jeuc91673trjdid7u5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.Craig.duke3"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

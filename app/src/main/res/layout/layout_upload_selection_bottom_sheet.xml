@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_10"
+    android:layout_marginRight="@dimen/dimen_10"
+    android:background="@drawable/bottom_sheet_background"
+    android:paddingLeft="@dimen/dimen_20"
+    android:paddingTop="@dimen/dimen_20"
+    android:paddingRight="@dimen/dimen_20"
+    android:paddingBottom="@dimen/dimen_30"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/dimen_0"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/HeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/how_to_upload" />
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/close_icon"
+        android:src="@drawable/ic_close" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/close"
+        android:layout_marginLeft="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/one_as_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/one_as_one_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:src="@drawable/ic_oneasone" />
+
+            <TextView
+                style="@style/BottomIconNamesUploadSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/one_as_one" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/all_as_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/all_as_one_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:src="@drawable/ic_allasone" />
+
+            <TextView
+                style="@style/BottomIconNamesUploadSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/all_as_one" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/manual_configuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/manual_configuration_icon"
+                android:layout_width="@dimen/dimen_20"
+                android:layout_height="@dimen/dimen_20"
+                android:layout_marginEnd="@dimen/dimen_5"
+                android:src="@drawable/ic_manual_configuration" />
+
+            <TextView
+                style="@style/BottomIconNamesUploadSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/manual_configuration" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

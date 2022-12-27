@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">MultiContactPicker</string>
+    <string name="picker_title">Select Contacts</string>
+    <string name="tv_select_btn_text_disabled">Done</string>
+    <string name="tv_select_btn_text_enabled">Done(%1$s)</string>
+    <string name="tv_select_all_btn_text">Select All</string>
+    <string name="tv_unselect_all_btn_text">Un-select All</string>
+    <string name="tv_no_contacts">No contacts found</string>
+    <string name="your_friend">“Your friend&#160;</string>
+    <string name="has_sent_you_a_private_invitation_to_download">&#160;has sent you a private invitation to download and use the automated bookkeeping and accounting tool call DUKE.AI”.  Remember to use referral identification code&#160;</string>
+    <string name="when_you_register_in_order_to">&#160;when you register in order to evaluate DUKE.AI at no cost. Click on&#160;</string>
+    <string name="has_sent_you_a_private_invitation_to_download_ttt">&#160;has sent you a private invitation to download and use the automated bookkeeping and accounting tool call Trucker Bookkeeping Tax Tools”.  Remember to use referral identification code&#160;</string>
+    <string name="when_you_register_in_order_to_ttt">&#160;when you register in order to evaluate Trucker Bookkeeping Tax Tools at no cost. Click on&#160;</string>
+    <string name="for_ios_or">&#160;for iOS or&#160;</string>
+    <string name="for_android">&#160;for Android.</string>
+</resources>

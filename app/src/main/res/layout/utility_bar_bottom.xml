@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    tools:background="@color/blue_212537">
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/dimen_10"
+        android:layout_marginStart="@dimen/dimen_10"
+        android:src="@drawable/ic_buy_icon"
+        app:maxImageSize="@dimen/dimen_40"
+        app:backgroundTint="@color/colorTransparent"
+        app:fabSize="normal" />
+
+</LinearLayout>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="@dimen/dimen_20"
+    tools:context=".ui.fragments.SignUpFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/logo"
+                style="@style/LogoImage"
+                android:layout_centerHorizontal="true"
+                android:contentDescription="@string/duke_logo"
+                android:src="@drawable/logo" />
+
+            <Button
+                android:id="@+id/login_tab"
+                style="@style/InactiveTabButton"
+                android:layout_alignBottom="@+id/register_tab"
+                android:layout_marginStart="@dimen/dimen_30"
+                android:text="@string/login" />
+
+            <View
+                android:id="@+id/register_underline"
+                style="@style/HorizontalLine"
+                android:layout_below="@+id/register_tab"
+                android:layout_alignStart="@+id/register_tab"
+                android:layout_alignEnd="@+id/register_tab"
+                android:layout_marginEnd="@dimen/dimen_13" />
+
+            <Button
+                android:id="@+id/register_tab"
+                style="@style/ActiveTabButton"
+                android:layout_below="@id/logo"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/dimen_39"
+                android:layout_marginEnd="@dimen/dimen_36"
+                android:text="@string/register_text" />
+
+            <RelativeLayout
+                android:id="@+id/form_layout"
+                style="@style/FormBackground"
+                android:layout_below="@id/register_tab"
+                android:layout_marginStart="@dimen/dimen_15"
+                android:layout_marginBottom="@dimen/dimen_30"
+                android:background="@drawable/register_shadow"
+                android:clipToPadding="false">
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/email"
+                    style="@style/FormFieldLayout"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/email_field"
+                        style="@style/FormField"
+                        android:drawableStart="@drawable/ic_email"
+                        android:hint="@string/email"
+                        android:tag="Email"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/email" />
+
+                </com.dukeai.android.views.CustomTextInputLayout>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/password"
+                    style="@style/FormFieldLayout"
+                    android:layout_below="@id/email"
+                    android:layout_marginTop="@dimen/dimen_0"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:passwordToggleDrawable="@drawable/password_toggle_icon"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/password_field"
+                        style="@style/FormField"
+                        android:drawableStart="@drawable/ic_password"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="Password"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/password" />
+
+                </com.dukeai.android.views.CustomTextInputLayout>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/phone"
+                    style="@style/FormFieldLayout"
+                    android:layout_below="@id/password"
+                    android:layout_marginTop="@dimen/dimen_0"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/phone_field"
+                        style="@style/FormField"
+                        android:drawableStart="@drawable/ic_phone"
+                        android:hint="@string/phone"
+                        android:inputType="phone"
+                        android:tag="Phone"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/phone" />
+
+                </com.dukeai.android.views.CustomTextInputLayout>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/promo"
+                    style="@style/FormFieldLayout"
+                    android:layout_below="@id/phone"
+                    android:layout_marginTop="@dimen/dimen_0"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/promo_code_field"
+                        style="@style/FormField"
+                        android:drawableStart="@drawable/ic_referral"
+                        android:hint="@string/referral_id"
+                        android:tag="Promo"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/promo" />
+
+                </com.dukeai.android.views.CustomTextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/username"
+                    style="@style/FormFieldLayout"
+                    android:layout_below="@+id/promo"
+                    android:layout_marginTop="@dimen/dimen_0"
+                    android:layout_marginBottom="@dimen/dimen_5"
+                    app:errorEnabled="false"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/username_field"
+                        style="@style/FormField"
+                        android:drawableStart="@drawable/ic_username"
+                        android:hint="@string/company_name"
+                        android:inputType="text"
+                        android:tag="Username"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/username" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/register_send_button"
+                    style="@style/FormButton"
+                    android:layout_below="@id/username"
+                    android:text="@string/send_verification_code"
+                    android:translationX="-15dp" />
+
+                <include
+                    android:id="@+id/social_login_signin_frag"
+                    layout="@layout/layout_social_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/register_send_button"
+                    tools:ignore="NotSibling" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

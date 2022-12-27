@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <com.dukeai.android.views.CustomHeader
+        android:id="@+id/add_tractor_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:elevation="@dimen/dimen_20" />
+
+    <ScrollView
+        android:id="@+id/scroll_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_patch">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20"
+            android:background="@drawable/white_fg_shadow_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_20">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/vin_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="VIN or ID#"></TextView>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/vin_wrapper"
+                    style="@style/BottomSheetFormFields"
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/vin_value"
+                        style="@style/FormField"
+                        android:cursorVisible="true"
+                        android:hint="A154BBS3"
+                        android:inputType="text"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="alphanumeric"
+                        android:textColorHint="#ECECED"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/vin_wrapper" />
+                </com.dukeai.android.views.CustomTextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/value_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Value"></TextView>
+
+                <TextView
+                    android:id="@+id/dollar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_30" />
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/value_wrapper"
+                    style="@style/BottomSheetFormFields"
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/value_amount"
+                        style="@style/FormField"
+                        android:drawableLeft="@drawable/dollar_symbol"
+                        android:hint="Amount"
+                        android:inputType="text"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="decimalnum"
+                        android:textColorHint="#ECECED"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/value_wrapper" />
+                </com.dukeai.android.views.CustomTextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"></TextView>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/description_wrapper"
+                    style="@style/BottomSheetFormFields"
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/description_value"
+                        style="@style/FormField"
+                        android:hint=""
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="descempty"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/description_wrapper" />
+                </com.dukeai.android.views.CustomTextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Depreciation"></TextView>
+
+                <RadioGroup
+                    android:id="@+id/radio_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <RadioButton
+                        android:id="@+id/na"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_30"
+                        android:checked="true"
+                        android:text="N/A"></RadioButton>
+
+                    <TextView
+                        android:id="@+id/emptyView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10" />
+
+                    <RadioButton
+                        android:id="@+id/seciton179"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10"
+                        android:text="Section 179"></RadioButton>
+
+                    <RadioButton
+                        android:id="@+id/yrline"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10"></RadioButton>
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/service_date_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/service_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:text="Inservice Date"/>
+
+              <!--  <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/service_date_wrapper"
+                    style="@style/BottomSheetFormFields"
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    android:visibility="visible"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/service_date_value"
+                        style="@style/FormField"
+                        android:editable="false"
+                        android:hint="YYYY-MM-DD"
+                        android:inputType="none"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="nonempty"
+                        android:textColorHint="#ECECED"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/service_date_wrapper" />
+                </com.dukeai.android.views.CustomTextInputLayout>-->
+
+                <TextView
+                    android:id="@+id/tvServiceDate"
+                    style="@style/BottomSheetFormFields"
+                    android:hint="YYYY-MM-DD"
+                    android:textColor="@color/black"
+                    android:textColorHint="#ECECED"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <View
+                    style="@style/MatchWrap"
+                    android:layout_height="@dimen/dimen_1"
+                    android:layout_below="@id/tvServiceDate"
+                    android:background="@color/black"
+                    android:visibility="visible" />
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/submit"
+                style="@style/CameraUploadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:layout_marginBottom="@dimen/dimen_20"
+                android:onClick="addTractorToList"
+                android:text="@string/submit" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

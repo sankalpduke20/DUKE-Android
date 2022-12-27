@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/colorBlack">
+
+    <ImageView
+        android:id="@+id/ifta_bg_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_25"
+        android:layout_marginEnd="@dimen/dimen_20"
+        android:layout_marginBottom="@dimen/dimen_15"
+        android:background="@drawable/rectangle_with_rounded_corners_white_bg" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dimen_20">
+
+        <ImageView
+            android:id="@+id/truck_img"
+            android:layout_width="@dimen/dimen_60"
+            android:layout_height="@dimen/dimen_80"
+            android:layout_marginStart="@dimen/dimen_30"
+            android:layout_marginEnd="@dimen/dimen_23"
+            android:contentDescription="@string/upload_document"
+            android:src="@drawable/ic_trip_status_truck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="@dimen/dimen_15"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:layout_marginBottom="0dp"
+            android:minWidth="@dimen/dimen_100"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/truck_img"
+            app:layout_constraintRight_toLeftOf="@id/ifta_controls_wrapper"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/ifta_title"
+                style="@style/HomeTitles"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_2"
+                android:text="TRACK MY MILES" />
+
+            <TextView
+                android:id="@+id/ifta_description"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:lines="2"
+                android:text="On Duty/Off Duty"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ifta_controls_wrapper"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:layout_marginEnd="@dimen/dimen_30"
+            android:layout_marginBottom="@dimen/dimen_30"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/location_switch_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_10"
+                android:theme="@style/SwitchTheme"
+                android:thumb="@drawable/switch_thumb_selector"
+                app:track="@drawable/switch_track" />
+
+            <TextView
+                android:id="@+id/location_switch_helper_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="START"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical">
+
+    <com.dukeai.android.views.CustomHeader
+        android:id="@+id/balance_sheet_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/dimen_20" />
+
+    <ScrollView
+        android:id="@+id/scroll_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/balance_sheet_header"
+        android:background="@drawable/bg_patch"
+        android:paddingBottom="@dimen/dimen_100">
+
+        <RelativeLayout
+            android:id="@+id/balnce_sheet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dimen_10">
+
+            <TextView
+                android:id="@+id/cash"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="Cash"
+
+                ></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/rview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cash"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/coa"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rview"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="@dimen/dimen_20"
+
+                android:text="Current Other Assets" />
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/coa_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coa"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/ofa"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/coa_rv"
+                android:layout_marginTop="@dimen/dimen_20"
+
+                android:text="Other Fixed Assets"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/ofa_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ofa"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/col"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ofa_rv"
+                android:layout_marginTop="@dimen/dimen_20"
+
+                android:text="Current Other Liabilities"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/col_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/col"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/ar"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/col_rv"
+
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="Accounts Receivable"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/ar_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ar"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/ap"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ar_rv"
+
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text=" Accounts Payable"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/ap_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ap"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/ol"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ap_rv"
+
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="Other Liabilities"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/ol_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ol"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/oe"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ol_rv"
+
+                android:layout_marginTop="@dimen/dimen_20"
+                android:text="Other Equity"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/oe_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/oe"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+            <TextView
+                android:id="@+id/oa"
+                style="@style/ProfileCardText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/oe_rv"
+
+                android:text="Other Assets"></TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/oa_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/oa"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:scrollbars="vertical" />
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <!--    <android.support.design.widget.FloatingActionButton-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:layout_margin="@dimen/dimen_20"-->
+    <!--        app:srcCompat="@android:drawable/ic_input_add"-->
+    <!--        android:tint="@android:color/white"-->
+    <!--        app:backgroundTint="@color/colorBlack"-->
+    <!--        android:onClick="addReport"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        />-->
+    <!--    <ImageView-->
+    <!--        android:id="@+id/fab"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|end"-->
+    <!--        android:onClick="addReport"-->
+    <!--        android:layout_alignParentBottom="true"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_margin="@dimen/dimen_20"-->
+    <!--        android:src="@drawable/ic_plus_bg"/>-->
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        style="@style/FloatingButtonStyles"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/dimen_20"
+        android:backgroundTint="@color/colorBlack"
+        android:onClick="addReport"
+        android:src="@drawable/ic_plussmall" />
+
+    <TextView
+        android:id="@+id/no_tractor_item"
+        style="@style/ProfileCardText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="No Records Found" />
+
+</RelativeLayout>

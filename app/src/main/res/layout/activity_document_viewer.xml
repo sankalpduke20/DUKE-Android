@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.DocumentViewerActivity">
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/pdf_viewer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.github.barteksc.pdfviewer.PDFView>
+
+    <FrameLayout
+        android:id="@+id/processed_document"
+        android:layout_width="0dp"
+        android:layout_height="0dp" />
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:gravity="center_horizontal"-->
+    <!--        android:layout_marginBottom="@dimen/dimen_20">-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/downloadBtn"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="@dimen/dimen_30"-->
+    <!--        android:text="@string/download"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:background="@drawable/blue_bg_rounded_corners"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:layout_alignParentBottom="true" />-->
+
+    <!--    <Button-->
+    <!--        android:id="@+id/shareBtn"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="@dimen/dimen_30"-->
+    <!--        android:text="Share"-->
+    <!--        android:textSize="15sp"-->
+    <!--        android:background="@drawable/blue_bg_rounded_corners"-->
+    <!--        android:textColor="@android:color/white"-->
+    <!--        android:textAllCaps="false"-->
+    <!--        android:layout_marginLeft="@dimen/dimen_20"-->
+    <!--        android:layout_toRightOf="@id/downloadBtn"-->
+    <!--        android:layout_alignParentBottom="true" />-->
+    <!--</RelativeLayout>-->
+
+    <LinearLayout
+        android:id="@+id/util_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dimen_15"
+        android:background="@drawable/rounded_cornered_rectangle_solid"
+        android:paddingStart="@dimen/dimen_15"
+        android:paddingTop="@dimen/dimen_5"
+        android:paddingEnd="@dimen/dimen_15"
+        android:paddingBottom="@dimen/dimen_5">
+
+        <include layout="@layout/download_and_share_panel" />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".ui.activities.FederalDeduction">
+
+    <com.dukeai.android.views.CustomHeader
+        android:id="@+id/report_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:elevation="@dimen/dimen_20" />
+
+    <ScrollView
+        android:id="@+id/scroll_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/report_header"
+        android:background="@drawable/bg_patch">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/dimen_20"
+            android:background="@drawable/white_fg_shadow_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_20">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_20"
+                android:layout_marginBottom="@dimen/dimen_10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Type"></TextView>
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    style="@style/Widget.AppCompat.Spinner.Underlined"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:paddingBottom="@dimen/dimen_10" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_5">
+
+                <TextView
+                    android:id="@+id/selected_tax_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dimen_20"
+                    android:text="Value">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/dollar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_30"></TextView>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/tax_amount_wrapper"
+                    style="@style/BottomSheetFormFields"
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/tax_amount"
+                        style="@style/FormField"
+                        android:drawableLeft="@drawable/dollar_symbol"
+                        android:hint="Amount"
+                        android:inputType="numberDecimal"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="decimalnum"
+                        android:textColorHint="#ECECED"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/tax_amount_wrapper" />
+
+                </com.dukeai.android.views.CustomTextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Description"></TextView>
+
+                <com.dukeai.android.views.CustomTextInputLayout
+                    android:id="@+id/description_wrapper"
+                    style="@style/BottomSheetFormFields"
+                    android:layout_marginTop="20dp"
+                    app:errorEnabled="true"
+                    app:hintEnabled="false"
+                    app:passwordToggleEnabled="true">
+
+                    <com.dukeai.android.views.CustomEditInputField
+                        android:id="@+id/description_value"
+                        style="@style/FormField"
+                        android:hint=""
+                        android:inputType="textMultiLine"
+                        android:maxLines="3"
+                        android:paddingEnd="@dimen/dimen_10"
+                        android:tag="descempty"
+                        app:hintTextAppearance="@color/colorIcon"
+                        app:parent_wrapper_id="@id/description_wrapper" />
+                </com.dukeai.android.views.CustomTextInputLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/submit"
+                    style="@style/CameraUploadButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:layout_marginBottom="@dimen/dimen_20"
+                    android:text="@string/submit" />
+
+                <RelativeLayout
+                    android:id="@+id/delete_icon"
+                    android:layout_width="@dimen/dimen_40"
+                    android:layout_height="@dimen/dimen_40"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="@dimen/dimen_20"
+                    android:background="@drawable/black_rounded_bg">
+
+                    <ImageView
+                        android:id="@+id/del_icon"
+                        android:layout_width="@dimen/dimen_25"
+                        android:layout_height="@dimen/dimen_25"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="@dimen/dimen_8"
+                        android:layout_marginRight="@dimen/dimen_8"
+                        android:src="@drawable/ic_delete_icon" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

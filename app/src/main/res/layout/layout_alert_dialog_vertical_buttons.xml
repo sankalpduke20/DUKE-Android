@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dimen_20">
+
+    <TextView
+        android:id="@+id/confirmation_title"
+        style="@style/ConfirmationTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="TITLE" />
+
+    <TextView
+        android:id="@+id/confirmation_message"
+        style="@style/ConfirmationMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmation_title"
+        tools:text="Message that is long enough to provide an idea about how long it may stretch." />
+
+    <Button
+        android:id="@+id/opt1_button"
+        style="@style/VerticalButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/confirmation_message"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_toLeftOf="@+id/positive_button"
+        tools:text="Option One" />
+
+    <Button
+        android:id="@+id/opt2_button"
+        style="@style/VerticalButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/opt1_button"
+        android:layout_toLeftOf="@+id/positive_button"
+        tools:text="Option two" />
+
+</RelativeLayout>

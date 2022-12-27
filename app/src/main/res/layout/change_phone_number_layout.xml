@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_20"
+    android:layout_marginRight="@dimen/dimen_20"
+    android:background="@drawable/bottom_sheet_background"
+    android:paddingLeft="@dimen/dimen_20"
+    android:paddingTop="@dimen/dimen_20"
+    android:paddingRight="@dimen/dimen_20"
+    android:paddingBottom="@dimen/dimen_350"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="@dimen/dimen_0"
+    app:layout_behavior="@string/bottom_sheet_behavior">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/HeaderTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/change_phone_number" />
+
+    <ImageView
+        android:id="@+id/close"
+        android:layout_width="@dimen/dimen_20"
+        android:layout_height="@dimen/dimen_20"
+        android:layout_alignParentEnd="true"
+        android:contentDescription="@string/close_icon"
+        android:src="@drawable/ic_close" />
+
+    <RelativeLayout
+        android:id="@+id/verify_password_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/close"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
+            style="@style/BottomSheetFormFields"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:passwordToggleDrawable="@drawable/password_toggle_icon"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_field"
+                style="@style/FormField"
+                android:drawableStart="@drawable/ic_password"
+                android:hint="@string/password"
+                android:inputType="textPassword"
+                android:paddingEnd="@dimen/dimen_10"
+                android:tag="OldPassword"
+                app:hintTextAppearance="@color/colorIcon"
+                app:parent_wrapper_id="@id/password" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/password_error"
+            style="@style/TextAppearance.Design.Error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="-15dp"
+            android:text="@string/invalid_password"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/verify"
+            style="@style/CameraUploadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password"
+            android:layout_marginTop="@dimen/dimen_20"
+            android:text="@string/verify" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/phone_number_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/close"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phone"
+            style="@style/BottomSheetFormFields"
+            app:errorEnabled="true"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_field"
+                style="@style/FormField"
+                android:drawableStart="@drawable/ic_phone"
+                android:hint="@string/phone"
+                android:inputType="phone"
+                android:tag="Phone"
+                android:text="@string/country_code"
+                app:hintTextAppearance="@color/colorIcon"
+                app:parent_wrapper_id="@id/phone" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/phone_number_error"
+            style="@style/TextAppearance.Design.Error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone"
+            android:layout_marginTop="-15dp"
+            android:text="@string/invalid_phone"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/done"
+            style="@style/CameraUploadButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/phone"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:text="@string/done" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

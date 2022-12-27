@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rel11"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dimen_15"
+    android:background="@drawable/white_background_with_black_border"
+    android:padding="@dimen/dimen_20">
+
+    <TextView
+        android:id="@+id/textv11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:gravity="center_vertical"
+        android:text="dummyText"
+        android:textSize="16sp" />
+
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="$"-->
+    <!--        android:paddingRight="@dimen/dimen_5"-->
+    <!--        android:layout_toLeftOf="@id/amount"-->
+    <!--        android:textColor="#C4CAE2"/>-->
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:id="@+id/amount"-->
+    <!--        android:layout_toLeftOf="@id/next_button"-->
+    <!--        android:paddingRight="@dimen/dimen_20"-->
+    <!--        android:text="20"-->
+    <!--        android:textColor="#C4CAE2"/>-->
+
+
+    <TextView
+        android:id="@+id/dollar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_4"
+        android:layout_toLeftOf="@id/amount"
+        android:fontFamily="@font/bebas"
+        android:paddingRight="@dimen/dimen_5"
+        android:text="$"
+        android:textColor="@color/colorAmount"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_2"
+        android:layout_toLeftOf="@id/next_button"
+        android:fontFamily="@font/bebas"
+        android:paddingRight="@dimen/dimen_20"
+        android:textColor="@color/colorAmount"
+        android:textSize="14sp"
+        tools:text="20" />
+
+    <ImageView
+        android:id="@+id/next_button"
+        android:layout_width="@dimen/dimen_15"
+        android:layout_height="@dimen/dimen_15"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:src="@drawable/ic_next" />
+
+</RelativeLayout>

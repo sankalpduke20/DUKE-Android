@@ -1,0 +1,254 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    ndkVersion '25.1.8937393'
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/ASL2.0'
+        exclude("META-INF/*.kotlin_module")
+        exclude 'com/itextpdf/io/font/cmap_info.txt'
+        exclude 'com/itextpdf/io/font/cmap/*'
+    }
+
+    signingConfigs {
+        productionTruckerTaxTools {
+            storeFile file('trucktools.jks')
+            storePassword '14Duke-AI2019'
+            keyPassword '14Duke-AI2019'
+            keyAlias = 'TRUCKER TAX TOOLS'
+        }
+        productionDuke {
+            storeFile file('duke.jks')
+            storePassword '14Duke-AI2019'
+            keyPassword '14Duke-AI2019'
+            keyAlias = 'DUKE'
+        }
+    }
+    compileSdkVersion 32
+    /**Last Released on: Apr 21 2020
+     * TTT: Build 8
+     * Duke: Build 33
+     * **/
+    defaultConfig {
+        applicationId "com.dukeai.android"
+//        applicationId "com.truckertaxtool.android"
+        minSdkVersion 23
+        targetSdkVersion 32
+        versionCode 503
+        versionName "5.0.3"
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        vectorDrawables.useSupportLibrary = true
+        archivesBaseName = "DUKE-Android-v$versionCode($versionName)"
+        setProperty("archivesBaseName", "DUKE-Android "+"-v$versionCode")
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            buildConfigField "String", "URL", project.production_url
+            buildConfigField "String", "CLIENT_ID", project.production_client_id
+            buildConfigField "String", "USER_POOL_ID", project.production_user_pool_id
+            buildConfigField "String", "CLIENT_SECRET", project.production_client_secret
+            buildConfigField "boolean", "shouldEnableDevTools", "true"
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+        }
+        dev {
+            buildConfigField "String", "URL", project.dev_url
+            buildConfigField "String", "CLIENT_ID", project.dev_client_id
+            buildConfigField "String", "USER_POOL_ID", project.dev_user_pool_id
+            buildConfigField "String", "CLIENT_SECRET", project.dev_client_secret
+            buildConfigField "boolean", "shouldEnableDevTools", "true"
+            buildConfigField "String", "theme", project.theme_duke
+            buildConfigField "String", "appClientId", project.dev_app_client_id
+            buildConfigField "String", "appClientSecret", project.dev_app_client_secret
+            buildConfigField "String", "appCognitoWebDomain", project.dev_app_cognito_web_domain
+            buildConfigField "String", "appRedirectScheme", project.dev_app_redirect_scheme
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [
+                    appIcon     : "@mipmap/ic_launcher",
+                    appScheme   : "@string/dukeScheme",
+                    schemeLab3el : "@string/duke",
+                    appLabelName: "@string/app_name",
+                    awsAppScheme: "myapp"
+            ]
+        }
+        productionTruckerTaxTools {
+            buildConfigField "String", "URL", project.truck_production_url
+            buildConfigField "String", "CLIENT_ID", project.production_client_id
+            buildConfigField "String", "USER_POOL_ID", project.production_user_pool_id
+            buildConfigField "String", "CLIENT_SECRET", project.production_client_secret
+            buildConfigField "boolean", "shouldEnableDevTools", "false"
+            buildConfigField "String", "theme", project.theme_truck
+            buildConfigField "String", "appClientId", project.ttt_app_client_id
+            buildConfigField "String", "appClientSecret", project.ttt_app_client_secret
+            buildConfigField "String", "appCognitoWebDomain", project.ttt_app_cognito_web_domain
+            buildConfigField "String", "appRedirectScheme", project.ttt_app_redirect_scheme
+            buildConfigField "String", "facebook_app_id", "\"965923793838766\""
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.productionTruckerTaxTools
+            manifestPlaceholders = [
+                    appIcon     : "@mipmap/ic_launcher1",
+                    appScheme   : "@string/truckertaxtools",
+                    schemeLabel : "@string/camelCaseTruckerTaxTools",
+                    appLabelName: "@string/trucker_tax_tools_app_name",
+                    awsAppScheme: "tttapp"
+            ]
+        }
+        productionDuke {
+            buildConfigField "String", "URL", project.duke_production_url
+            buildConfigField "String", "CLIENT_ID", project.production_client_id
+            buildConfigField "String", "USER_POOL_ID", project.production_user_pool_id
+            buildConfigField "String", "CLIENT_SECRET", project.production_client_secret
+            buildConfigField "boolean", "shouldEnableDevTools", "false"
+            buildConfigField "String", "theme", project.theme_duke
+            buildConfigField "String", "appClientId", project.duke_app_client_id
+            buildConfigField "String", "appClientSecret", project.duke_app_client_secret
+            buildConfigField "String", "appCognitoWebDomain", project.duke_app_cognito_web_domain
+            buildConfigField "String", "appRedirectScheme", project.duke_app_redirect_scheme
+            buildConfigField "String", "facebook_app_id", "\"431883027393905\""
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.productionDuke
+            manifestPlaceholders = [
+                    appIcon     : "@mipmap/ic_launcher",
+                    appScheme   : "@string/dukeScheme",
+                    schemeLabel : "@string/duke",
+                    appLabelName: "@string/app_name",
+                    awsAppScheme: "dukeapp"
+            ]
+        }
+    }
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+}
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    maven {
+        url = uri("https://storage.googleapis.com/r8-releases/raw")
+    }
+
+}
+
+def androidLibraryVersion = '25.4.0'
+
+dependencies {
+    implementation 'androidx.wear:wear:1.0.0'
+    compileOnly 'com.google.android.wearable:wearable:2.6.0'
+    def lifecycle_version = "1.1.1"
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'commons-logging:commons-logging:1.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+
+    // retrofit, gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.1'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.17'
+
+    implementation 'com.revenuecat.purchases:purchases:4.0.1'
+
+    //Butterknife
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation 'com.amazonaws:aws-android-sdk-cognitoidentityprovider:2.6.3'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    implementation 'com.karumi:dexter:5.0.0'
+
+    implementation 'com.auth0.android:jwtdecode:1.2.0'
+    implementation 'com.joooonho:selectableroundedimageview:1.0.1'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+
+    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.google.firebase:firebase-messaging:17.4.0'
+
+    // Crash
+//    implementation 'com.crashlytics.sdk.android:crashlytics:2.10.0'
+    implementation('com.crashlytics.sdk.android:crashlytics:2.10.0@aar') {
+        transitive = true;
+    }
+    // FB ads
+    implementation 'com.facebook.android:facebook-android-sdk:5.0.0'
+
+    /** For Asynchronous Image loading **/
+    implementation 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+
+    /** iTextPDF library **/
+    implementation 'com.itextpdf:itextg:5.5.10'
+
+    /** Contacts Picker **/
+    implementation project(':multicontactpicker')
+
+    /** Location Services **/
+    implementation 'com.google.android.gms:play-services-location:21.0.0'
+
+
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.2.1'
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation "com.android.billingclient:billing:5.1.0"
+
+    implementation group: 'com.sun.mail', name: 'android-mail', version: '1.6.0'
+    implementation group: 'com.sun.mail', name: 'android-activation', version: '1.6.0'
+
+    //Recycler view swipe decorator
+    implementation 'com.github.xabaras:RecyclerViewSwipeDecorator:1.4'
+
+    implementation 'in.gauriinfotech:commons:1.0.8'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.11.1'
+
+
+    // Required for Cognito
+    implementation 'androidx.browser:browser:1.0.0'
+    implementation project(path: ':awsCognitoAuth')
+
+    implementation 'com.github.MikeOrtiz:TouchImageView:1.4.1'
+
+    implementation 'com.github.DUKEAILLC.AndroidSDK:manageloads:1.3.2'
+//    implementation 'com.github.DUKEAILLC.AndroidSDK:manageloads:1.3.0'
+}
+
+
+
+// ADD THIS AT THE BOTTOM
+apply plugin: 'com.google.gms.google-services'

@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background">
+
+    <ScrollView
+        android:id="@+id/scroll_view_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_patch"
+        tools:context=".ui.fragments.HomeFragment">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dimen_80">
+
+            <com.dukeai.android.views.CustomHeader
+                android:id="@+id/custom_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </com.dukeai.android.views.CustomHeader>
+
+            <FrameLayout
+                android:id="@+id/ifta_Wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/custom_header"
+                android:layout_marginTop="-10dp">
+
+                <include layout="@layout/ifta_component" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/loads"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ifta_Wrapper"
+                android:layout_marginHorizontal="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/dimen_15">
+
+                <ImageView
+                    android:id="@+id/load_menu_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/left_corners_white_background" />
+
+                <RelativeLayout
+                    style="@style/HomeMenuSection"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+<!--                    <LinearLayout-->
+<!--                        android:id="@+id/loads_txt"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignBottom="@+id/loads_icon"-->
+<!--                        android:layout_toStartOf="@+id/loads_icon"-->
+<!--                        android:orientation="vertical">-->
+
+<!--                        <TextView-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_marginBottom="@dimen/dimen_2"-->
+<!--                            android:text="@string/manage" />-->
+
+<!--                        <TextView-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/loads"-->
+<!--                            android:layout_marginBottom="@dimen/dimen_2" />-->
+
+<!--                        <TextView-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="@string/document" />-->
+
+<!--                    </LinearLayout>-->
+
+                    <TextView
+                        android:id="@+id/loads_txt"
+                        style="@style/HomeTitles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:text="Manage Loads" />
+
+
+<!--                    <ImageView-->
+<!--                        android:id="@+id/loads_icon"-->
+<!--                        android:layout_width="@dimen/dimen_83"-->
+<!--                        android:layout_height="@dimen/dimen_105"-->
+<!--                        android:layout_alignParentEnd="true"-->
+<!--                        android:layout_marginStart="@dimen/dimen_23"-->
+<!--                        android:layout_marginEnd="@dimen/dimen_40"-->
+<!--                        android:contentDescription="@string/view_document"-->
+<!--                        android:src="@drawable/ic_load_icon" />-->
+
+                    <ImageView
+                        android:id="@+id/loads_icon"
+                        android:layout_width="@dimen/dimen_63"
+                        android:layout_height="@dimen/dimen_90"
+                        android:layout_toEndOf="@id/loads_txt"
+                        android:layout_marginHorizontal="@dimen/dimen_20"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/view_document"
+                        android:src="@drawable/ic_load_icon" />
+
+                </RelativeLayout>
+            </FrameLayout>
+
+<!--            <GridLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:rowCount="2"-->
+<!--                android:columnCount="2"-->
+<!--                android:layout_marginTop="@dimen/dimen_10"-->
+<!--                android:layout_below="@id/loads">-->
+
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/upload_document"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_row="0"-->
+<!--                    android:layout_column="0"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_columnWeight="1"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:background="@drawable/right_corners_white_background"-->
+<!--                    android:layout_margin="@dimen/dimen_15">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/upload_count"-->
+<!--                        style="@style/UploadCount"-->
+<!--                        android:background="@drawable/upload_count_safe"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:layout_gravity="end"-->
+<!--                        android:layout_margin="@dimen/dimen_5">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/upload_count_text"-->
+<!--                            style="@style/BebasRegular13"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:includeFontPadding="false"-->
+<!--                            android:text="2/10"-->
+<!--                            android:paddingEnd="@dimen/dimen_2" />-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:padding="@dimen/dimen_20">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/upload_document_image"-->
+<!--                            android:layout_width="@dimen/dimen_60"-->
+<!--                            android:layout_height="@dimen/dimen_80"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:contentDescription="@string/upload_document"-->
+<!--                            android:src="@drawable/ic_upload_document" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:layout_marginTop="@dimen/dimen_10"-->
+<!--                            android:text="Upload  Receipt/Invoice"-->
+<!--                            android:layout_below="@id/upload_document_image"/>-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </FrameLayout>-->
+
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/scan_document"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_row="0"-->
+<!--                    android:layout_column="1"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_columnWeight="1"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:background="@drawable/right_corners_white_background"-->
+<!--                    android:layout_margin="@dimen/dimen_15">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:padding="@dimen/dimen_20">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/scan_document_image"-->
+<!--                            android:layout_width="@dimen/dimen_60"-->
+<!--                            android:layout_height="@dimen/dimen_80"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:contentDescription="@string/scan_document"-->
+<!--                            android:src="@drawable/ic_scan_icon_2" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:layout_marginTop="@dimen/dimen_10"-->
+<!--                            android:text="Scan  Documents"-->
+<!--                            android:layout_below="@id/scan_document_image"/>-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </FrameLayout>-->
+
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/view_document"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_row="1"-->
+<!--                    android:layout_column="0"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_columnWeight="1"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:layout_margin="@dimen/dimen_15"-->
+<!--                    android:background="@drawable/right_corners_white_background">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:id="@+id/rejected_count_wrapper"-->
+<!--                        style="@style/DashboardRejectCount"-->
+<!--                        android:layout_gravity="right"-->
+<!--                        android:background="@drawable/rejected_count_background"-->
+<!--                        android:visibility="invisible"-->
+<!--                        android:layout_margin="@dimen/dimen_5">-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/rejected_count"-->
+<!--                            style="@style/BebasRegular13"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_centerVertical="true"-->
+<!--                            android:includeFontPadding="false"-->
+<!--                            android:paddingEnd="@dimen/dimen_2" />-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="@dimen/dimen_4"-->
+<!--                            android:layout_height="@dimen/dimen_13"-->
+<!--                            android:layout_alignBottom="@+id/rejected_count"-->
+<!--                            android:layout_toEndOf="@+id/rejected_count"-->
+<!--                            android:contentDescription="@string/exclamation"-->
+<!--                            android:src="@drawable/ic_exclamation"-->
+<!--                            app:tint="@color/colorWhite" />-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:padding="@dimen/dimen_20">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/view_document_image"-->
+<!--                            android:layout_width="@dimen/dimen_60"-->
+<!--                            android:layout_height="@dimen/dimen_80"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:contentDescription="@string/view_document"-->
+<!--                            android:src="@drawable/ic_view_document" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:layout_marginTop="@dimen/dimen_10"-->
+<!--                            android:text="View Documents"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:layout_below="@id/view_document_image"/>-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </FrameLayout>-->
+
+<!--                &lt;!&ndash;                android:background="@drawable/right_corners_white_background"&ndash;&gt;-->
+
+
+<!--                <FrameLayout-->
+<!--                    android:id="@+id/view_report"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_row="1"-->
+<!--                    android:layout_column="1"-->
+<!--                    android:layout_rowWeight="1"-->
+<!--                    android:layout_columnWeight="1"-->
+<!--                    android:layout_gravity="fill"-->
+<!--                    android:layout_margin="@dimen/dimen_15"-->
+<!--                    android:background="@drawable/right_corners_white_background">-->
+
+<!--                    <RelativeLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:gravity="center"-->
+<!--                        android:layout_gravity="center_horizontal"-->
+<!--                        android:padding="@dimen/dimen_20">-->
+
+<!--                        <ImageView-->
+<!--                            android:id="@+id/view_report_image"-->
+<!--                            android:layout_width="@dimen/dimen_60"-->
+<!--                            android:layout_height="@dimen/dimen_80"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:contentDescription="@string/view_report"-->
+<!--                            android:src="@drawable/ic_view_report" />-->
+
+<!--                        <TextView-->
+<!--                            android:id="@+id/view_report_id"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            style="@style/HomeTitles"-->
+<!--                            android:textAlignment="center"-->
+<!--                            android:layout_marginTop="@dimen/dimen_10"-->
+<!--                            android:text="View  Reports"-->
+<!--                            android:layout_below="@id/view_report_image"/>-->
+
+<!--                    </RelativeLayout>-->
+
+<!--                </FrameLayout>-->
+
+
+<!--            </GridLayout>-->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_30"
+                android:layout_alignLeft="@id/loads"
+                android:layout_alignRight="@id/loads"
+                android:layout_below="@id/loads">
+
+                <FrameLayout
+                    android:id="@+id/upload_document"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen_10"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintRight_toLeftOf="@id/scan_document"
+                    android:background="@drawable/right_corners_white_background">
+
+                    <RelativeLayout
+                        android:id="@+id/upload_count"
+                        style="@style/UploadCount"
+                        android:background="@drawable/upload_count_safe"
+                        android:visibility="invisible"
+                        android:layout_gravity="end"
+                        android:layout_margin="@dimen/dimen_5">
+
+                        <TextView
+                            android:id="@+id/upload_count_text"
+                            style="@style/BebasRegular13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:includeFontPadding="false"
+                            android:paddingEnd="@dimen/dimen_2"
+                            android:text="2/10" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/dimen_20">
+
+                        <ImageView
+                            android:id="@+id/upload_document_image"
+                            android:layout_width="@dimen/dimen_60"
+                            android:layout_height="@dimen/dimen_80"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/upload_document"
+                            android:src="@drawable/ic_upload_document" />
+
+                        <TextView
+                            style="@style/HomeTitles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/upload_document_image"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:text="Upload  Receipt/Invoice"
+                            android:textAlignment="center" />
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/scan_document"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintLeft_toRightOf="@id/upload_document"
+                    app:layout_constraintBottom_toBottomOf="@id/upload_document"
+                    app:layout_constraintTop_toTopOf="@id/upload_document"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:background="@drawable/right_corners_white_background">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/dimen_20">
+
+                        <ImageView
+                            android:id="@+id/scan_document_image"
+                            android:layout_width="@dimen/dimen_60"
+                            android:layout_height="@dimen/dimen_80"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/scan_document"
+                            android:src="@drawable/ic_scan_icon_2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/HomeTitles"
+                            android:textAlignment="center"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:text="Scan  Documents"
+                            android:layout_below="@id/scan_document_image"/>
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/view_document"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/upload_document"
+                    app:layout_constraintStart_toStartOf="@id/upload_document"
+                    app:layout_constraintEnd_toEndOf="@id/upload_document"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    android:background="@drawable/right_corners_white_background">
+
+                    <RelativeLayout
+                        android:id="@+id/rejected_count_wrapper"
+                        style="@style/DashboardRejectCount"
+                        android:layout_gravity="right"
+                        android:background="@drawable/rejected_count_background"
+                        android:visibility="invisible"
+                        android:layout_margin="@dimen/dimen_5">
+
+                        <TextView
+                            android:id="@+id/rejected_count"
+                            style="@style/BebasRegular13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:includeFontPadding="false"
+                            android:paddingEnd="@dimen/dimen_2" />
+
+                        <ImageView
+                            android:layout_width="@dimen/dimen_4"
+                            android:layout_height="@dimen/dimen_13"
+                            android:layout_alignBottom="@+id/rejected_count"
+                            android:layout_toEndOf="@+id/rejected_count"
+                            android:contentDescription="@string/exclamation"
+                            android:src="@drawable/ic_exclamation"
+                            app:tint="@color/colorWhite" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/dimen_20">
+
+                        <ImageView
+                            android:id="@+id/view_document_image"
+                            android:layout_width="@dimen/dimen_60"
+                            android:layout_height="@dimen/dimen_80"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/view_document"
+                            android:src="@drawable/ic_view_document" />
+
+                        <TextView
+                            style="@style/HomeTitles"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/view_document_image"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:text="View Documents"
+                            android:textAlignment="center" />
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/view_report"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@id/view_document"
+                    app:layout_constraintBottom_toBottomOf="@id/view_document"
+                    app:layout_constraintStart_toStartOf="@id/scan_document"
+                    app:layout_constraintEnd_toEndOf="@id/scan_document"
+                    android:background="@drawable/right_corners_white_background">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:padding="@dimen/dimen_20">
+
+                        <ImageView
+                            android:id="@+id/view_report_image"
+                            android:layout_width="@dimen/dimen_60"
+                            android:layout_height="@dimen/dimen_80"
+                            android:layout_centerHorizontal="true"
+                            android:contentDescription="@string/view_report"
+                            android:src="@drawable/ic_view_report" />
+
+                        <TextView
+                            android:id="@+id/view_report_id"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/HomeTitles"
+                            android:textAlignment="center"
+                            android:layout_marginTop="@dimen/dimen_10"
+                            android:text="View  Reports"
+                            android:layout_below="@id/view_report_image"/>
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+
+
+                <TextView
+                    android:id="@+id/home_txt"
+                    style="@style/HomeTitles"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginHorizontal="@dimen/dimen_20"
+                    android:text="Help"
+                    android:layout_marginTop="@dimen/dimen_10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/view_document" />
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/util_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_marginBottom="@dimen/dimen_15"
+        android:background="@drawable/rounded_cornered_rectangle_solid"
+        android:paddingStart="@dimen/dimen_5"
+        android:paddingTop="@dimen/dimen_5"
+        android:paddingEnd="@dimen/dimen_10"
+        android:paddingBottom="@dimen/dimen_5"
+        android:visibility="invisible">
+
+        <include layout="@layout/utility_bar_bottom" />
+
+    </LinearLayout>
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/util_wrapper"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_gravity="bottom|right"-->
+    <!--        android:layout_marginBottom="@dimen/dimen_15"-->
+    <!--        android:paddingStart="@dimen/dimen_5"-->
+    <!--        android:paddingTop="@dimen/dimen_5"-->
+    <!--        android:paddingEnd="@dimen/dimen_15"-->
+    <!--        android:paddingBottom="@dimen/dimen_5"-->
+    <!--        android:background="@drawable/floating_view"-->
+    <!--        android:layout_marginRight="-15dp">-->
+
+    <!--        <include layout="@layout/utility_bar_bottom"-->
+    <!--            android:layout_marginTop="@dimen/dimen_25"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="@dimen/dimen_10"-->
+    <!--            />-->
+
+    <!--    </LinearLayout>-->
+</FrameLayout>

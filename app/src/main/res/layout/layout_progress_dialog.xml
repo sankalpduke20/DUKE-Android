@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/dimen_15"
+    android:paddingTop="@dimen/dimen_10"
+    android:paddingEnd="@dimen/dimen_15"
+    android:paddingBottom="@dimen/dimen_10">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        style="@style/FontBebas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_10"
+        android:textColor="@color/blue_212537"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Downloading" />
+
+    <ProgressBar
+        android:id="@+id/dialog_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_0"
+        android:layout_marginTop="@dimen/dimen_40"
+        android:layout_marginEnd="@dimen/dimen_0"
+        android:max="100"
+        android:progressTint="#176EF5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dialog_title"
+        tools:progress="30" />
+
+    <TextView
+        android:id="@+id/dialog_progress_text"
+        style="@style/FontBebas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_0"
+        android:textColor="@color/blue_212537"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_progress_bar"
+        tools:text="30%" />
+
+    <TextView
+        android:id="@+id/dialog_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/dimen_10"
+        android:textColor="@color/blue_212537"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dialog_progress_text"
+        tools:text="Selected 20 Documents. Please wait while we download them for you." />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

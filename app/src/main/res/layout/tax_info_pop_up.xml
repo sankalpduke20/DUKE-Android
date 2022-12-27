@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?><!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    android:orientation="vertical"-->
+<!--    android:padding="@dimen/dimen_10">-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/white_bg_rounded_corners"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_20"
+        android:layout_marginTop="@dimen/dimen_30"
+        android:layout_marginRight="@dimen/dimen_20"
+        android:layout_marginBottom="@dimen/dimen_10"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tax_info_title"
+            style="@style/HeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tax_information"></TextView>
+
+        <ImageView
+            android:id="@+id/close_icon"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_15"
+            android:src="@drawable/ic_close"></ImageView>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/federal_deduction_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_35"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_25"
+        android:layout_marginBottom="@dimen/dimen_5"
+        android:background="@drawable/white_background_with_black_border">
+
+        <ImageView
+            android:id="@+id/federal_deduction_icon"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:src="@drawable/ic_tax_icon" />
+
+        <TextView
+            android:id="@+id/federal_deduction"
+            style="@style/ProfileCardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_25"
+            android:padding="@dimen/dimen_10"
+            android:text="Federal Deductions" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/asset_deduction_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_35"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_25"
+        android:layout_marginBottom="@dimen/dimen_5"
+        android:background="@drawable/white_background_with_black_border">
+
+        <ImageView
+            android:id="@+id/assets_deduction_icon"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:src="@drawable/ic_tax_icon" />
+
+        <TextView
+            android:id="@+id/asset_deduction"
+            style="@style/ProfileCardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_25"
+            android:padding="@dimen/dimen_10"
+            android:text="Asset Deductions" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/balance_sheet_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_35"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:layout_marginRight="@dimen/dimen_25"
+        android:layout_marginBottom="@dimen/dimen_40"
+        android:background="@drawable/white_background_with_black_border">
+
+        <ImageView
+            android:id="@+id/balance_sheet_icon"
+            android:layout_width="@dimen/dimen_15"
+            android:layout_height="@dimen/dimen_20"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_10"
+            android:src="@drawable/ic_tax_icon" />
+
+        <TextView
+            android:id="@+id/balance_sheet"
+            style="@style/ProfileCardText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dimen_25"
+            android:padding="@dimen/dimen_10"
+            android:text="Balance Sheet" />
+
+    </RelativeLayout>
+</LinearLayout>
+
+    <!--</RelativeLayout>-->

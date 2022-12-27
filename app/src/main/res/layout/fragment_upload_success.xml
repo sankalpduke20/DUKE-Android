@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.UploadSuccessFragment">
+
+    <com.dukeai.android.views.CustomHeader
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </com.dukeai.android.views.CustomHeader>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_marginLeft="@dimen/dimen_30"
+        android:layout_marginTop="@dimen/dimen_70"
+        android:layout_marginRight="@dimen/dimen_30">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="@dimen/dimen_105"
+            android:layout_height="@dimen/dimen_129"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/upload_success"
+            android:src="@drawable/ic_upload_success" />
+
+        <TextView
+            android:id="@+id/volia"
+            style="@style/UploadSuccessHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_31"
+            android:text="@string/volia" />
+
+        <TextView
+            android:id="@+id/status"
+            style="@style/UploadSuccessText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/volia"
+            android:text="@string/hello_your_document_was_uploaded_we_will_get_back_to_you_if_we_are_unable_to_process_the_document"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/add_another_document"
+            style="@style/SuccessButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/status"
+            android:layout_centerHorizontal="true"
+            android:text="@string/add_another_document" />
+
+        <Button
+            android:id="@+id/go_back_home"
+            style="@style/BottomLinkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_another_document"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dimen_35"
+            android:text="@string/go_back_home" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

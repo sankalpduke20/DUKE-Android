@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="reports_spinner_items">
+        <item>Last Week</item>
+        <item>Last Month</item>
+        <item>Last Quarter</item>
+    </string-array>
+</resources>

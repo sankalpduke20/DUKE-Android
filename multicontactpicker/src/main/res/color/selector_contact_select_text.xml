@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="true"
+          android:color="@color/blue_212537"/> <!-- enabled -->
+    <item android:color="@color/selection_bg_color"/> <!-- default -->
+</selector>

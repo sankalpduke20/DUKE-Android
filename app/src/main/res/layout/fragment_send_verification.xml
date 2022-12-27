@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    android:paddingBottom="@dimen/dimen_20"
+    tools:context=".ui.fragments.VerificationFragment">
+
+    <com.dukeai.android.views.CommonHeader
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/dimen_20"
+        android:paddingTop="@dimen/dimen_25"
+        android:paddingBottom="@dimen/dimen_25">
+
+    </com.dukeai.android.views.CommonHeader>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logo"
+            style="@style/LogoImage"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_30"
+            android:contentDescription="@string/duke_logo"
+            android:src="@drawable/logo" />
+
+        <RelativeLayout
+            style="@style/FormBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginEnd="@dimen/dimen_15"
+            android:clipToPadding="false"
+            android:paddingStart="@dimen/dimen_20">
+
+            <TextView
+                android:id="@+id/verification_code_text"
+                style="@style/VerificationCodeText"
+                android:layout_marginTop="@dimen/dimen_15"
+                android:text="@string/enter_the_verification_code_sent_at" />
+
+            <com.dukeai.android.views.CustomTextInputLayout
+                android:id="@+id/verification_code_layout"
+                style="@style/FormFieldLayout"
+                android:layout_below="@+id/verification_code_text"
+                android:layout_marginStart="@dimen/dimen_0"
+                android:layout_marginTop="@dimen/dimen_40"
+                app:errorEnabled="true"
+                app:hintEnabled="false">
+
+                <com.dukeai.android.views.CustomEditInputField
+                    android:id="@+id/send_code"
+                    style="@style/FormField"
+                    android:hint="@string/verification_code"
+                    android:tag="Code"
+                    app:hintTextAppearance="@color/colorIcon"
+                    app:parent_wrapper_id="@id/verification_code_layout" />
+
+            </com.dukeai.android.views.CustomTextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/promo"
+                style="@style/FormFieldLayout"
+                android:layout_below="@id/verification_code_layout"
+                android:layout_marginStart="@dimen/dimen_0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/promo_code_field"
+                    style="@style/FormField"
+                    android:hint="@string/referral_id"
+                    android:inputType="textEmailAddress"
+                    android:paddingEnd="@dimen/dimen_10"
+                    android:tag="Promo"
+                    app:hintTextAppearance="@color/colorIcon"
+                    app:parent_wrapper_id="@id/promo" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/promo_code_error"
+                style="@style/TextAppearance.Design.Error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/promo"
+                android:layout_marginEnd="@dimen/dimen_33"
+                android:text="@string/referral_id_error"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/button"
+                style="@style/FormButton"
+                android:layout_below="@+id/promo_code_error"
+                android:layout_alignParentEnd="true"
+                android:text="@string/verify"
+                android:translationX="@dimen/dimen_35" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/resend"
+            style="@style/resendButton"
+            android:layout_gravity="end"
+            android:text="@string/did_not_get_resend" />
+
+    </LinearLayout>
+
+</RelativeLayout>

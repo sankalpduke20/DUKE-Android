@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?><!--Author: Shibobrota Das-->
+<!--    Date: Sept 27-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.SearchProcessedDocumentsFragment">
+
+    <!--   Search View Starts-->
+    <LinearLayout
+        android:id="@+id/search_view_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/colorTransparentWhite">
+
+        <!--      Back Button-->
+        <LinearLayout
+            android:id="@+id/nav_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="@dimen/dimen_15"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:layout_marginEnd="@dimen/dimen_10"
+                android:src="@drawable/ic_back" />
+        </LinearLayout>
+
+        <!--Search View-->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:iconifiedByDefault="false"
+            app:queryHint="Search for documents here..." />
+
+    </LinearLayout>
+    <!--   Search View Ends-->
+
+
+    <!--   Options Wrapper View-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/options_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
+        android:background="@color/colorTransparentWhite">
+
+        <!--      period selector spinner-->
+        <com.dukeai.android.utils.DasSpinner
+            android:id="@+id/period_selector_spinner"
+            style="@style/ReportSpinner"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:background="@color/colorTransparent"
+            android:overlapAnchor="false"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:listitem="Year To Date" />
+
+        <TextView
+            android:id="@+id/datesSelected"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/dimen_20"
+            android:layout_marginLeft="@dimen/dimen_75"
+            android:layout_marginTop="@dimen/dimen_0"
+            android:background="@color/colorTransparent"
+            android:textColor="@color/black"
+            android:textSize="@dimen/dimen_12"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:text="2020-02-02 - 2020-03-03"
+
+            />
+        <!--       android:background="#F8F6E6"-->
+
+        <!--       <Spinner-->
+        <!--           android:id="@+id/showSpinner"-->
+        <!--           style="@style/ReportSpinner"-->
+        <!--           android:spinnerMode="dropdown"-->
+        <!--           android:overlapAnchor="false"-->
+        <!--           tools:listitem=" "-->
+        <!--           android:visibility="gone"-->
+        <!--           android:background="@color/colorTransparent"-->
+        <!--           app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--           app:layout_constraintStart_toStartOf="parent"-->
+        <!--           app:layout_constraintTop_toTopOf="parent"-->
+        <!--           app:layout_constraintVertical_chainStyle="packed"-->
+        <!--           android:layout_marginStart="@dimen/dimen_20"/>-->
+
+        <!--       <TextView-->
+        <!--           android:layout_width="wrap_content"-->
+        <!--           android:layout_height="wrap_content"-->
+        <!--           android:id="@+id/showDates"-->
+        <!--           app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--           app:layout_constraintStart_toStartOf="parent"-->
+        <!--           app:layout_constraintTop_toTopOf="parent"-->
+        <!--           app:layout_constraintVertical_chainStyle="packed"-->
+        <!--           android:layout_marginStart="@dimen/dimen_20"-->
+        <!--           android:layout_alignParentStart="true"-->
+        <!--           android:textSize="@dimen/dimen_12"-->
+        <!--           android:textColor="@color/black"-->
+        <!--           android:layout_marginLeft="@dimen/dimen_75"-->
+        <!--           android:layout_marginTop="@dimen/dimen_0"-->
+        <!--           android:visibility="gone"-->
+        <!--           android:background="#F8F6E6"-->
+
+        <!--           />-->
+
+
+        <!--      Periond selector Spinner View Ends-->
+
+        <!--      Download Button-->
+        <Button
+            android:id="@+id/document_download_button"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/dimen_30"
+            android:layout_marginEnd="@dimen/dimen_20"
+            android:background="@drawable/blue_bg_rounded_corners"
+            android:text="@string/download"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+        <!--      Download Button Ends-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--   options Wrapper View Ends-->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--   List Containing the results-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_result_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorTransparentWhite"
+            android:paddingStart="@dimen/dimen_10"
+            android:paddingEnd="@dimen/dimen_10" />
+
+        <RelativeLayout
+            android:id="@+id/no_results_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:gravity="center"
+            android:visibility="visible">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/dimen_40">
+
+                <ImageView
+                    android:id="@+id/search_problem_icon"
+                    android:layout_width="@dimen/dimen_60"
+                    android:layout_height="@dimen/dimen_60"
+                    android:src="@drawable/ic_search_problem" />
+
+                <TextView
+                    style="@style/FontBebas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:text="@string/sorry_no_results_found"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue_212537"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+
+</LinearLayout>

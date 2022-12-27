@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.InProcessFragment">
+
+    <RelativeLayout
+        style="@style/DocumentsGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/process_documents_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/dimen_10"
+            android:paddingBottom="@dimen/dimen_20"
+            android:scrollbars="vertical" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/rejected_empty_card"
+        layout="@layout/empty_documents_view"
+        android:visibility="gone" />
+
+</RelativeLayout>

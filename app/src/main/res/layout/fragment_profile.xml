@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.ProfileFragment">
+
+    <com.dukeai.android.views.CustomHeader
+        android:id="@+id/profile_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack"
+        android:elevation="@dimen/dimen_2" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/profile_header">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dimen_300"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginEnd="@dimen/dimen_20">
+
+                <ImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/dimen_15"
+                    android:scaleType="centerCrop" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimen_60"
+                    android:layout_alignBottom="@+id/profile_image"
+                    android:src="@drawable/profile_gradient" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@id/profile_image"
+                    android:paddingStart="@dimen/dimen_20"
+                    android:paddingEnd="@dimen/dimen_20"
+                    android:paddingBottom="@dimen/dimen_15">
+
+                    <TextView
+                        android:id="@+id/name_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/bebas"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="17sp"
+                        tools:text="@string/hello_user" />
+
+                    <ImageView
+                        android:id="@+id/profile_edit"
+                        android:layout_width="@dimen/dimen_15"
+                        android:layout_height="@dimen/dimen_15"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_edit"
+                        android:tint="@color/colorWhite" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/change_password_layout"
+                style="@style/ProfileCardsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/password_icon"
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_14"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:src="@drawable/ic_password" />
+
+                <TextView
+                    style="@style/ProfileCardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/password_icon"
+                    android:text="@string/change_password" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/change_phone_layout"
+                style="@style/ProfileCardsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/phone_icon"
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_14"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:src="@drawable/ic_phone" />
+
+                <TextView
+                    style="@style/ProfileCardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/phone_icon"
+                    android:text="@string/change_phone_number" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/open_with_camera_home"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/open_with_camera"
+                    style="@style/ProfileCardsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/open_with_camera_icon"
+                        android:layout_width="@dimen/dimen_15"
+                        android:layout_height="@dimen/dimen_15"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:src="@drawable/ic_profile_camera" />
+
+                    <TextView
+                        style="@style/ProfileCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/open_with_camera_icon"
+                        android:text="@string/open_app_with_camera" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/open_with_home"
+                    style="@style/ProfileCardsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/open_with_home_icon"
+                        android:layout_width="@dimen/dimen_15"
+                        android:layout_height="@dimen/dimen_15"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="@dimen/dimen_10"
+                        android:src="@drawable/ic_home" />
+
+                    <TextView
+                        style="@style/ProfileCardText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@+id/open_with_home_icon"
+                        android:text="@string/open_app_with_home" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/tax_information_layout"
+                style="@style/ProfileCardsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/tax_info_icon"
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_20"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:src="@drawable/ic_tax_icon" />
+
+                <TextView
+                    android:id="@+id/tax_info_text"
+                    style="@style/ProfileCardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/tax_info_icon"
+                    android:text="@string/tax_information" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/manage_bank_layout"
+                style="@style/ProfileCardsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/manage_bank_icon"
+                    android:layout_width="@dimen/dimen_15"
+                    android:layout_height="@dimen/dimen_20"
+                    android:layout_centerVertical="true"                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:src="@drawable/ic_union" />
+
+                <TextView
+                    android:id="@+id/manage_bank_text"
+                    style="@style/ProfileCardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/manage_bank_icon"
+                    android:text="@string/manage_bank_connections" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/logout_layout"
+                style="@style/ProfileCardsLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/dimen_20">
+
+                <ImageView
+                    android:id="@+id/logout_icon"
+                    android:layout_width="@dimen/dimen_10"
+                    android:layout_height="@dimen/dimen_14"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dimen_10"
+                    android:src="@drawable/ic_logout" />
+
+                <TextView
+                    style="@style/ProfileCardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/logout_icon"
+                    android:text="@string/logout" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/member_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textStyle="bold"
+                android:textColor="@color/colorBlack"
+                android:layout_marginStart="@dimen/dimen_32"
+                android:layout_marginEnd="@dimen/dimen_32"
+                android:textSize="@dimen/font_18"/>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

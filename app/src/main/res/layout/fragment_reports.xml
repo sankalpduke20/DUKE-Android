@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/reports"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.ReportsFragment">
+
+    <com.dukeai.android.views.CustomHeader
+        android:id="@+id/reports_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/spinner_heading"
+        style="@style/SpinnerHeading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/reports_header"
+        android:text="@string/showing_summary_for" />
+
+    <Spinner
+        android:id="@+id/report_spinner"
+        style="@style/ReportSpinner"
+        android:layout_height="@dimen/dimen_50"
+        android:layout_below="@id/spinner_heading"
+        android:background="@color/colorTransparent"
+        android:overlapAnchor="false"
+        android:spinnerMode="dropdown" />
+
+    <TextView
+        android:id="@+id/datesSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/spinner_heading"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="@dimen/dimen_20"
+        android:background="@color/colorTransparent"
+        android:textColor="@color/black"
+        android:textSize="@dimen/dimen_12"
+        android:visibility="invisible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reports_recycler_view"
+        style="@style/ReportRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/report_spinner"
+        android:clipToPadding="false"
+        android:paddingBottom="@dimen/dimen_100">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <include
+        android:id="@+id/empty_repots_layout"
+        style="@style/ReportsEmptyCard"
+        layout="@layout/empty_documents_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/report_spinner"
+        android:visibility="gone" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload_button"
+        style="@style/FloatingButtonStyles"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_camara"
+        app:borderWidth="@dimen/dimen_0" />
+
+</RelativeLayout>
